@@ -9,32 +9,32 @@ export const calculateTotal = (tripCost, options) => {
     if (typeof (currentValue) != 'undefined') {
       if (Array.isArray(currentValue) && Array.isArray(option.values)) {
         for (let optionId of currentValue) {
-          const value = option.values.filter(opt => opt.id == optionId)[0];
+          const value = option.values.filter(opt => opt.id === optionId)[0];
           const price = parseOptionPrice(value.price);
-          if (price.type == 'multiplier') {
+          if (price.type === 'multiplier') {
             multiplier += price.value;
           }
-          else if (price.type == 'number') {
+          else if (price.type === 'number') {
             total += price.value;
           }
         }
       }
       else if (currentValue !== '' && Array.isArray(option.values)) {
-        const value = option.values.filter(opt => opt.id == currentValue)[0];
+        const value = option.values.filter(opt => opt.id === currentValue)[0];
         const price = parseOptionPrice(value.price);
-        if (price.type == 'multiplier') {
+        if (price.type === 'multiplier') {
           multiplier += price.value;
         }
-        else if (price.type == 'number') {
+        else if (price.type === 'number') {
           total += price.value;
         }
       }
-      else if (option.type == 'number') {
+      else if (option.type === 'number') {
         const price = parseOptionPrice(option.price);
-        if (price.type == 'multiplier') {
+        if (price.type === 'multiplier') {
           multiplier += price.value * currentValue;
         }
-        else if (price.type == 'number') {
+        else if (price.type === 'number') {
           total += price.value * currentValue;
         }
       }

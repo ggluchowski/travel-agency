@@ -39,11 +39,6 @@ export const getFilteredTrips = ({trips, filters}) => {
 
   }
 
-  // if(filters.tags){
-  //   const tagsFilter = filters.tags;
-  //   output = output.filter(trip => tagsFilter === trip.tags);
-  // }
-
   // TODO - sort by cost descending (most expensive goes first)
   const temp = output.map(trip => {
     const replaceCost = trip.cost.replace(',','');
@@ -51,6 +46,7 @@ export const getFilteredTrips = ({trips, filters}) => {
     const costNum = trip.costNum = parseFloat(trimDolar);
     return costNum;
   })
+  console.log(temp);
 
   output = output.sort((a, b) => b.costNum - a.costNum);
 
