@@ -62,7 +62,7 @@ describe('Component TripSummary', () => {
     const expectedTags = [];
     const component = shallow(<TripSummary tags={expectedTags} />)
 
-    console.log(component.debug());
+    //console.log(component.debug());
 
     const renderTags = component.find('.tags');
     expect(renderTags).toEqual({});

@@ -1,3 +1,4 @@
+import React from 'react';
 import { formatPrice } from '../../../utils/formatPrice';
 import PropTypes from 'prop-types';
 import styles from './OrderOption.module.scss';
@@ -9,7 +10,7 @@ const OrderOptionIcons =
   currentValue,
   setOptionValue}) =>
 (
-  <div className={styles.icon}>
+  <div className={styles.component}>
     {required ? '' : (
     <div
     onClick={() => setOptionValue('')}
@@ -39,7 +40,7 @@ const OrderOptionIcons =
 OrderOptionIcons.propTypes = {
   values: PropTypes.array,
   required: PropTypes.bool,
-  currentValue: PropTypes.string,
+  currentValue: PropTypes.any,
   setOptionValue: PropTypes.func,
 }
 
