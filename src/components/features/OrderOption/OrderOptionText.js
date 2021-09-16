@@ -9,6 +9,7 @@ const OrderOptionText = ({name, currentValue, setOptionValue}) => (
     className={styles.input}
     type='text'
     placeholder={name}
+    required
     onChange={event => setOptionValue(event.currentTarget.value)}
     >
     </input>
