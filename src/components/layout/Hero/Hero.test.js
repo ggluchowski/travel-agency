@@ -42,6 +42,15 @@ describe('Component Hero', () => {
     expect(component.hasClass('dummy')).toBe(true);
   });
 
+  it('render HappyHourAd component', () => {
+    const expectedTitle = 'Lorem ipsum';
+    const expectedImage = 'image.jpg';
+    const component = shallow(<Hero titleText={expectedTitle} imageSrc={expectedImage}/>)
+
+    const renderHappyHour = component.find('HappyHourAd');
+    expect(renderHappyHour.length).toEqual(1);
+  });
+
 
 
 
